@@ -1,3 +1,9 @@
+% Density adjustment parameters
+
+% Controls the amount of additional space between paragraphs
+\parskip 0.4\baselineskip
+% Controls the spacing between lines (1.00 is normal spacing)
+\linespread{1.00}
 
 %%% PAGE SETUP
 \special{papersize=8.5in,11in}
@@ -28,7 +34,6 @@
 \marginparsep 0in
 \marginparwidth 0in
 \footskip 0.5in
-\parskip 0.4\baselineskip
 \columnsep 0.22in
 \parindent 0in
 \textfloatsep 0.10 in
@@ -40,6 +45,15 @@
 
 %\renewcommand{\baselinestretch}{0.95}
 \newcommand{\SF}[1]{{\fontsize{6}{6pt}\sffamily#1}}
+
+% Changes to Times Roman font, which is one of the fonts allowed by NSF
+\usepackage{mathptmx}
+
+% For research.gov proposals pages should not be numbered,
+% their system adds page numbers as it puts together the overall proposal document
+\usepackage{nopageno}
+
+\renewcommand{\footnote}[1]{\errmessage{Footnotes are not allowed in an NSF Project Description!}}
 
 %==============================================================
 
@@ -58,7 +72,7 @@
   {0pt}                   % indent
   {0.4\baselineskip}      % beforeskip
   {0.1\baselineskip}         % afterskip
-  {\fontsize{12}{\baselineskip} \sffamily \bfseries}} % style
+  {\fontsize{12}{\baselineskip} \rmfamily \bfseries}} % style
 \makeatother
 
 \makeatletter

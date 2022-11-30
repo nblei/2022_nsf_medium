@@ -5,3 +5,5 @@
 *.bbl
 *.out
 *.synctex
+latex/description.synctex.gz
+latex/description.pdf
