@@ -1,0 +1,29 @@
+\color{red}
+Our symbolic execution framework, used to enable side-chanel aware software
+development, currently uses detailed gate-level models of the microprocessor
+hardware.  This approach results in high fidelity reproduction of the
+microprocessor's EM side-channel, but comes at a high computational cost,
+limiting its utility to a software developer.
+For example, an FFT implementation for a 16-bit MSP430 DSP takes over 10,000
+seconds to run on the gate-level framework.  This means that a developer would
+need to wait nearly three hours between modifying the program, and getting
+results for its impact on EM side-channel information leakage.  We will raise
+the abstraction level of our symbolic execution framework from the gate-level
+to the MISO model abstraction detailed in Sec.~\ref{sec:preliminary_results}.
+There are several pecularities which make this an interesting task.  First,
+data-dependent activities will often be evaluated for symbolic data.  As such,
+for a given time period, the EM signal is best modeled as a distribution.
+Second, microarchitectural events (i.e., stalls, cache misses, and branch
+mispredictions) will also be dependent on symbolic data (e.g., a symbolic
+address resulting in either a cache hit or a cache miss).  Thus, great care
+must be taken to ensure the path explosion problem is not exascerbated by the
+modeling of microarchitectural events.  These pecularities mean that performing
+symboilc execution at the MISO model level is not straightforward,
+hence enabling side-channel aware software development requires further
+research effort.
+Additionally, identifying relevant information flow policies and determining
+the EM characteristics associated with violations of the policies requires
+further effort.
+\color{black}
+
+

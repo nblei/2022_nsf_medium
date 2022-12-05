@@ -1,0 +1,33 @@
+\color{red}
+We will create a version of PDAT purpose built for identifying potential EM
+side-channel leakage using the high-level MIMO model, rather than a detailed
+netlist model. Unlike symbolic execution, model checking does not suffer from
+the path-explosion problem (model checking's computational complexity is based
+on the size of the model's state space), thus handling microarchitectural
+events poses no significant difficulties. Since the high-level model has
+significantly smaller state-space than a microprocessor's netlist, this will
+lead to significant decrease in model checking runtime.
+It will also enable computer architects to
+rapidly explore the architectural design space for EM side-channel behavior.
+For example, an architect can determine the impact of branch delay
+slots~\cite{lalja88} on side-channel behavior by disabling the branch
+misprediction event within PDAT, or determine the impact of software based
+multiplication by restricting the execution environment to non-multiply
+instructions.
+
+PDAT's environment restrictions allows us to also use PDAT for
+software-hardware co-analysis.  We can restrict the environment to a single
+program, and use model checking to explore all possible executions of the
+program for a given hardware model.  This enables hardware-software codesign
+flows to be EM side-channel aware.
+
+A model checking approach can also be used purely by software developers, as an
+alternative to the symbolic execution approach, by restricting the execution
+environment to a single program.  As the performance of model checking and
+symbolic execution are both dependent on the particular MISO model as well as
+the particular program, it is likely that in some cases, symbolic execution
+will perform better than model checking, and vice versa.  This makes both
+approaches to side-channel aware software development valuable.
+\color{black}
+
+

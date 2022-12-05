@@ -7,3 +7,7 @@
 *.synctex
 latex/description.synctex.gz
 latex/description.pdf
+Tectonic.toml
+src
+build
+

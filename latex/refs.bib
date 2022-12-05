@@ -1298,3 +1298,60 @@ doi = {10.1109/ICASSP.2018.8461902}
   number={},
   pages={1-1},
   doi={10.1109/TC.2021.3109457}}
+
+
+@inproceedings{cherupalli2017,
+author = {Cherupalli, Hari and Duwe, Henry and Ye, Weidong and Kumar, Rakesh and Sartori, John},
+title = {Bespoke Processors for Applications with Ultra-Low Area and Power Constraints},
+year = {2017},
+isbn = {9781450348928},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3079856.3080247},
+doi = {10.1145/3079856.3080247},
+abstract = {A large number of emerging applications such as implantables, wearables, printed electronics, and IoT have ultra-low area and power constraints. These applications rely on ultra-low-power general purpose microcontrollers and microprocessors, making them the most abundant type of processor produced and used today. While general purpose processors have several advantages, such as amortized development cost across many applications, they are significantly over-provisioned for many area- and power-constrained systems, which tend to run only one or a small number of applications over their lifetime. In this paper, we make a case for bespoke processor design, an automated approach that tailors a general purpose processor IP to a target application by removing all gates from the design that can never be used by the application. Since removed gates are never used by an application, bespoke processors can achieve significantly lower area and power than their general purpose counterparts without any performance degradation. Also, gate removal can expose additional timing slack that can be exploited to increase area and power savings or performance of a bespoke design. Bespoke processor design reduces area and power by 62% and 50%, on average, while exploiting exposed timing slack improves average power savings to 65%.},
+booktitle = {Proceedings of the 44th Annual International Symposium on Computer Architecture},
+pages = {41–54},
+numpages = {14},
+keywords = {ultra-low-power processors, application-specific processors, Internet of Things, hardware-software co-analysis, bespoke processors},
+location = {Toronto, ON, Canada},
+series = {ISCA '17}
+
+@inproceedings{cherupalli20172,
+author = {Cherupalli, Hari and Duwe, Henry and Ye, Weidong and Kumar, Rakesh and Sartori, John},
+title = {Software-Based Gate-Level Information Flow Security for IoT Systems},
+year = {2017},
+isbn = {9781450349529},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3123939.3123955},
+doi = {10.1145/3123939.3123955},
+abstract = {The growing movement to connect literally everything to the internet (internet of things or IoT) through ultra-low-power embedded microprocessors poses a critical challenge for information security. Gate-level tracking of information flows has been proposed to guarantee information flow security in computer systems. However, such solutions rely on non-commodity, secure-by-design processors. In this work, we observe that the need for secure-by-design processors arises because previous works on gate-level information flow tracking assume no knowledge of the application running in a system. Since IoT systems typically run a single application over and over for the lifetime of the system, we see a unique opportunity to provide application-specific gate-level information flow security for IoT systems. We develop a gate-level symbolic analysis framework that uses knowledge of the application running in a system to efficiently identify all possible information flow security vulnerabilities for the system. We leverage this information to provide security guarantees on commodity processors. We also show that security vulnerabilities identified by our analysis framework can be eliminated through software modifications at 15\% energy overhead, on average, obviating the need for secure-by-design hardware. Our framework also allows us to identify and eliminate only the vulnerabilities that an application is prone to, reducing the cost of information flow security by 3.3\texttimes{} compared to a software-based approach that assumes no application knowledge.},
+booktitle = {Proceedings of the 50th Annual IEEE/ACM International Symposium on Microarchitecture},
+pages = {328–340},
+numpages = {13},
+keywords = {security, ultra-low-power processors, information flow, hardware-software co-analysis, internet of things},
+location = {Cambridge, Massachusetts},
+series = {MICRO-50 '17}
+}
+
+@INPROCEEDINGS{bleier21,
+  author={Bleier, Nathan and Sartori, John and Kumar, Rakesh},
+  booktitle={2021 58th ACM/IEEE Design Automation Conference (DAC)},
+  title={Property-driven Automatic Generation of Reduced-ISA Hardware},
+  year={2021},
+  volume={},
+  number={},
+  pages={349-354},
+  doi={10.1109/DAC18074.2021.9586090}}
+
+@ARTICLE{lalja88,
+  author={Lalja, D. J.},
+  journal={Computer},
+  title={Reducing the branch penalty in pipelined processors},
+  year={1988},
+  volume={21},
+  number={7},
+  pages={47-55},
+  doi={10.1109/2.68}}
+

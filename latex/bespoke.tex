@@ -1,0 +1,27 @@
+\color{red}
+Most software developers lack both the know-how and the equipment to evaluate
+their software's potential vulnerability to analog side channels.  As such,
+blackbox software which enables developers to analyze their software for analog
+side channels is valuable. Analysis of a \textit{program} is difficult
+vis-\`a-vis analysis of an \textit{single execution} of the program, because
+analyzing the program means analyzing all possible executions of the program.
+In fact, program inputs can also effect microarchitectural events (e.g.,
+stall due to branch predictor miss on data-dependent branch, cache hit/miss
+based on input-dependend data accesses, etc).  It is possible that
+one program execution does not result in leakage of sensitive information
+via analog side channel, while a different execution of the same program
+does result in leakage of sensitive information via analog side channel.
+As such, it is important for developers to be able to
+analyze \textit{all} possible executions of their programs.
+
+The PIs previous work using symbolic execution of programs to analyze net
+switching behavior~\cite{cherupalli2017} and perform taint
+tracking~\cite{cherupalli20172} is highly relevant, as it enables capturing
+switching activities for all possible executions of a given program.  The prior
+work can be modified to meet the abstraction level of the microarchitectural EM
+side channel model (Sec.~\ref{sec:preliminary_results}).
+Developers will be able to use this symbolic execution framework to perform
+microarchitecturally aware analysis of their software's susceptibility to
+analog side channel information leakage without any additional expertise or
+equipment (in fact, they will not even need the targetted microprocessor).
+

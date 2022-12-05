@@ -195,6 +195,7 @@ Also related to this work are work on leveraging EM signals for program profilin
 However, none of them address the need for developing microarchitecture-level analog side-channel tool such that allows for integration of such modeling into a cycle-accurate simulator. This, in turn, would allow analog side channels to become a first-class consideration, along with performance and power, in processor designs, allowing computer architects to avoid introducing significant new vulnerabilities and ``breaking'' existing software mitigation, and possibly even to reduce leakage and/or enable new mitigation.
 
 \section{Preliminary Results}
+\label{sec:preliminary_results}
 The PIs are the first to attempt to address these challenges and develop microarchitecture-level EM side-channel model \cite{Nader2020}.
 
 Fundamentally, EM side-channel signals are created due to \textit{bit-flips} at the transistor-level~\cite{VANECK1985269,6766222}.
@@ -360,12 +361,19 @@ These categories are shown in Table~\ref{t:inst}. Using this table, we then used
 
 Figure~\ref{fig:bench} shows the simulated and actual EM-side-channel signals for one of the groups tested in our evaluation (for clarity, only the first 50 cycles are shown in the figure). As can be seen from the figure, the simulated signal matches the real signal with high accuracy. We found that, on average, \textbf{\textit{EMSim has about 94.1\% accuracy in simulating side-channel signals across all possible instruction combinations}}.
 
+\input{bespoke_prior.tex}
+\input{pdat_prior.tex}
+% \input{bespoke.tex}
+
 \section{Proposed Research}
 
 
 
 \textbf{Machine learning methods for analog side channel modeling}. In this task we propose to develop machine learning techniques that will allow for analog side channel modeling that is not dependant on collecting measurements on particular processor and are scalable across different processor and memory speeds. Furthermore, we propose to create neural network structure that does not require to observe all possible combinations of instructions in order to model larger sequences of instructions. Finally, we propose to develop methods for ``calibration'' of simulation parameters against measured signals from real systems.
 
+\input{bespoke_proposed.tex}
+\input{pdat_proposed.tex}
+\input{calibration.tex}
 
 
 \section{Integrated Research, Education, and Outreach Plan- EDIT}
