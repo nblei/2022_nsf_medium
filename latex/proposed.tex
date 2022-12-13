@@ -13,7 +13,7 @@ Our training constructs the signal snippets and their estimated weights through 
 
 To implement this approach, our proposed research consists of four primary research thrusts:
 
-\begin{enumerate}
+\begin{enumerate}[topsep=0pt,itemsep=0pt]
 \item Discovering how to efficiently generate detailed event timestaps and use them to combine signal snippets into the overall side channel signal, along with per-block and per-code-region breakdowns and attribution that can help computer architects and software developers assess how microarchitectural and software changes affect the tradeoff between performance, power, and side channel leakage.
 \item Discovering how to efficiently perform circuit-level simulation of caches, functional units, and other building blocks of the processor, to provide per-event timelines for voltage, current, and possibly other metrics that are needed to construct signal snippets for various side channels. along with other useful information such as how much the values of the metrics depend on data values.
 \item Discovering new methods that produce per-event signal snippets for varous side channels, by 1) transforming the outputs of circuit-level simulation, 2) decomposing measured signals, or 3) synergistically combining both methods, and also design of new methods for estimating per-block weights.
@@ -48,6 +48,8 @@ which tends to match measurements well.
 Differences among types of events events are represented in EMSim only by having each event type have a separate scaling factor for this common snippet shape, and
 these scaling factors are estimated using linear regression from signals that are measured on an FPGA-based imlpementation of this processor. Note that, although a more detailed RTL model of this processor was available, EMSim only uses the microarchitectural model in its simulation; the RTL was only used to implement the processor that was used to measure signals for finding scaling factors (training) and for evaluation of EMSim's accuracy.
 
+EMSim combines scaled snippets into the overall simulated side channel signal (for program code that was not used to estimate the scaling factors). For this, it uses a microarchitecture-level simulator of the processor's pipeline.
+In each cycle, for each stage of the processor, this simulator identifies
 \begin{wrapfigure}{r}{0.45\textwidth}
 	\centering
 		\vspace{-0.15in}
@@ -57,18 +59,20 @@ these scaling factors are estimated using linear regression from signals that ar
 	\label{fig:bench}
 	\vspace{-0.1in}
 \end{wrapfigure}
-EMSim combines scaled snippets into the overall simulated side channel signal (for program code that was not used to estimate the scaling factors). For this, it uses a microarchitecture-level simulator of the processor's pipeline.
-In each cycle, for each stage of the processor, this simulator identifies which instruction is in that stage in that cycle, applies the corresponding scaling factor to the decaying-oscillation shape, and adds the scaled ``snippet'' to the overall signal at that point in time. The resulting signal for one such simulation is shown, along with the measured signal for the same program run, in Figure~\ref{fig:bench}. We observe that, although the signals have some differences, most of the prominent features from the measured signal are also present in the simulator-generated signal.
+ which instruction is in that stage in that cycle, applies the corresponding scaling factor to the
+decaying-oscillation shape, and adds the scaled ``snippet'' to the overall signal at that point in time.
+The resulting signal for one such simulation is shown, along with the measured signal for the same program run, in Figure~\ref{fig:bench}. We observe that, although the signals have some differences, most of the prominent features from the measured signal are also present in the simulator-generated signal.
+
+Our sensitivity analysis for EMSim~\cite{Nader2020} has demonstrated the importance of modeling timing and microarchitectural behaviors, i.e. the need for cycle-accurate simulation of the microarchitecture rather than a simpler architecture-level emulation of the instruction stream.
 
 \begin{wrapfigure}{r}{0.45\textwidth}
 	\centering
+		\vspace{-0.15in}
 	\includegraphics[width=0.45\columnwidth,clip]{figure/stall2.pdf}
 	\vspace{-0.3in}
 	\caption{Comparison of measured (green) and simulated (black) EM signals with (top) and without (bottom) modeling pipeline stalls.}
 	\label{fig:stall}
 \end{wrapfigure}
-Our sensitivity analysis for EMSim~\cite{Nader2020} has demonstrated the importace of modeling timing and microarchitectural behaviors, i.e. the need for cycle-accurate simulation of the microarchitecture rather than a simpler architecture-level emulation of the instruction stream.
-
 To illustrate the need to account for microarchitectural events, Figure\ref{fig:stall} shows how a pipeline stall affects the signal. For illustration purposes, we increased the latency of a MUL instruction to eight cycles, and show a situation where the next instruction uses the result of a MUL. In the top part in Figure~\ref{fig:stall}, where the stall is correctly modeled in EMSim, the simulated signal has good agreement with the measured signal. However, in the bottom part in Figure~\ref{fig:stall} EMSim was modified to ignore this read-after-write dependence, resulting in not modeling the stall and, consequently, not having a good match to the measured signal.
 Similar effects are observed when the simulation ignores other microarchitectural events and their timing, e.g. cache misses, branch mispredictions, etc.
 

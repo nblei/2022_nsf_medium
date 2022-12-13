@@ -191,42 +191,15 @@ The relationship between executed instructions, microarhitecture, and the result
 
 \input{proposed.tex}
 
-\section{Integrated Research, Education, and Outreach Plan}
-The research, education, and outreach milestones for each year are outlined in the following table.
-\begin{small}
-\begin{tabular}{||c|p{0.42\linewidth}|p{0.42\linewidth}||}
-\hline
-\hline
-\textbf{Year} & \textbf{Research} & \textbf{Education and Outreach}\\
-\hline
-\textit{1} & Develop methods that allow microarchitecture-level simulation to produce highly accurate analog side channel signals; 
-Develop methods for efficiently performing circuit-level simulation of caches, functional units, and other building blocks of the processor, to provide per-event timelines for voltage and current; Develop methods that produce per-event signal snippets for various side channels by transforming the outputs of circuit-level simulation.
+\section{Proposed Outreach and Education Activities}
 
-& Develop initial modules for graduate courses, visits to local schools, undergraduate teams work on lab measurement setups\\
-\hline
-\textit{2} & Refine methods to allow for per-block and per-code-region breakdowns and attribution to help computer architects and software developers assess the impacts of microarchitectural and software changes; Refine circuit-models to include other metrics that are needed to construct signal snippets for various side channels, along with other useful information such as how much the values of the metrics depend on data values; Develop methods that decompose measured signals.
-&
-Develop course modules for graduate and undergraduate courses; visit school for hands-on demonstrations, undergraduate teams experiment with refinements to measurement, training, and matching methodology \\
-\hline
-\textit{3}  &Develop tools to evaluate the tradeoff between performance, power, and side channel leakage; Integrate circuit models into overall architecture side channel simulator; Develop methods that estimate per-block scaling factors for adding these snippets to the overall analog side channel signals; Validate overall side channel simulations against measured side channel signals.
- &
-Refine course modules; develop K-12 and public demonstrators for sensory experiences of HT detection (e.g., use software defined radio setups to demonstrate HT detection); fully integrate undergraduates in research\\
-\hline
-\hline
-\end{tabular}
-\end{small}
-
-The PIs plan to conduct the proposed research in a highly integrated manner, as the project requires technical and research expertise from several Computer Science (CS) and Electrical Engineering (EE) disciplines, and each PI brings skills essential for the success of this work. To keep the project integrated, we will regularly communicate among the tems members, hold bi-weekly project-wide virtual meetings, and meet in person at least once per year (more details are in our Collaboration Plan).
-
-\subsection{Proposed Outreach and Education Activities}
-
-In addition to research proposed here, this proposed work will help foster interaction among researchers from a
+The proposed research work will help foster interaction among researchers from a
 very diverse set of research areas and will involve training students
 with a considerable multidisciplinary expertise. To further increase
 the impact of this work, we are also planning to perform the following
-outreach and education activities.
+outreach and education activities, as well as the activities described in our Broadening Participation in Computing (BPC) plan.
 
-\begin{itemize}\denseitems
+\begin{itemize}[topsep=0pt,itemsep=0pt]
 
 \item We will continue to introduce relevant cross-disciplinary material into several courses at the graduate and undergraduate level.
 For example, we will add to VLSI and computer architecture courses an introduction to physical side-channel signals.
@@ -245,52 +218,96 @@ students in research, and will provide both graduate and undergraduate student w
 
 \item Another outreach activity will be the development of displays
   and tools for educating the general public, especially high-school
-  students and teachers, on issues related to both HTs and side-channel signals. This initiative will be
-  pursued through Georgia Tech’s established outreach programs for
-  high schools in the greater metro Atlanta area~\cite{Conrad2022}.
-  The PIs Zajic and Prvulovic have done this in the past with hands-on demonstration for the Family Science Night at the Mimosa
-  Elementary School in Roswell, GA and hands-on STEM activities at Pace Academy in Atlanta, GA.
-  Similarly, Dr. Kumar has assisted in the organization of events such as HackIllinois and Engineering Open House (EOH)
-  that see enthusiastic participation from the local community. He will have a booth on “processors that leak information” in the
-  next three EOHs to get high school students excited about intersection of computer architecture and security.
-
+  students and teachers, on issues related to side-channel signals.
+  This initiative will be pursued through Georgia Tech’s established
+  outreach programs for high schools in the greater metro Atlanta
+  area~\cite{Conrad2022} and at events at UIUC.
+  The PIs Zajic and Prvulovic have done this in the past with hands-on
+  demonstration for the Family Science Night at the Mimosa Elementary
+  School in Roswell, GA and hands-on STEM activities at Pace Academy
+  in Atlanta, GA.
+Similarly, Dr. Kumar has assisted in the organization of events such as
+HackIllinois and Engineering Open House (EOH) that see enthusiastic
+participation from the local community.
+He will have a booth on “processors that leak information” in the next three EOHs to get high school students excited about intersection of computer architecture and security.
 \end{itemize}
+
+
+\section{Integrated Research, Education, and Outreach Plan}
+The research, education, and outreach milestones for each year are outlined in the following table.
+
+%\begin{small}
+\begin{tabular}{||c|p{0.45\linewidth}|p{0.39\linewidth}||}
+\hline
+\hline
+\textbf{Year} & \textbf{Research} & \textbf{Education and Outreach}\\
+\hline
+\textit{1} & Develop methods that allow microarchitecture-level simulation to produce highly accurate analog side channel signals; 
+Develop methods for efficiently performing circuit-level simulation of caches, functional units, and other building blocks of the processor, to provide per-event timelines for voltage and current; Develop methods that produce per-event signal snippets for various side channels by transforming the outputs of circuit-level simulation.
+& Develop initial modules for graduate courses, visits to local schools, undergraduate teams work on lab measurement setups\\
+\hline
+\textit{2} & Refine methods to allow for per-block and per-code-region breakdowns and attribution to help computer architects and software developers assess the impacts of microarchitectural and software changes; Refine circuit-models to include other metrics that are needed to construct signal snippets for various side channels, along with other useful information such as how much the values of the metrics depend on data values; Develop methods that decompose measured signals.
+&
+Develop course modules for graduate and undergraduate courses; visit school for hands-on demonstrations, undergraduate teams experiment with refinements to measurement, training, and matching methodology \\
+\hline
+\textit{3}  &Develop tools to evaluate the tradeoff between performance, power, and side channel leakage; Integrate circuit models into overall architecture side channel simulator; Develop methods that estimate per-block scaling factors for adding these snippets to the overall analog side channel signals; Validate overall side channel simulations against measured side channel signals.
+ &
+Refine course modules; develop K-12 and public demonstrators for sensory experiences of side-channel concerns (e.g., use software defined radio setups and simulation to demonstrate attacks and defenses); fully integrate undergraduates in research\\
+\hline
+\hline
+\end{tabular}
+%\end{small}
+
+The PIs plan to conduct the proposed research, education, and outreach activities in a highly integrated manner, as the project requires technical and research expertise from several Computer Science (CS) and Electrical Engineering (EE) disciplines, and each PI brings skills essential for the success of this work. To keep the project integrated, we will regularly communicate among the team members, hold bi-weekly project-wide virtual meetings, and meet in person at least once per year (more details are in our Collaboration Plan).
 
 
 \section{Results from Prior NSF Support}
 \label{sec:prior}
 \noindent
-{\bf Dr. Prvulovic and Dr. Zajic} have served as PIs and Co-PIs on the following NSF-funded projects in the last five years CCF-1563991 SHF (from 2016-2022 $\$850K$) and CNS 1740962 (from 2017-2019, $\$199,866$).
+{\bf Dr. Prvulovic and Dr. Zajic} were PIs/Co-PIs on the following NSF-funded projects in the last five years:
 
-Grant CCF-1563991 SHF \textit{Spectral Profiling: Understanding Software Performance without Code Instrumentation}
-($\$850K$, October 2013- September 2016).
-\textit{Intellectual Merit:}Our seminal work on EM emission based program profiling provided the basis for
-future work in the more general area of program analysis techniques that leverage the physical side
-effects of computation \cite{Zop, Zop2, Nader2016, Elvan2021}.
-\textit{Broader Impact:}This work has opened up new possibilities in a number of additional areas,
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+\item Grant CCF-1563991 SHF \textit{Spectral Profiling: Understanding Software Performance without Code Instrumentation}
+($\$850K$, July 2016- June 2022). \\
+\textit{Intellectual Merit:}
+Our seminal work on EM emission based program profiling provided the basis for future work in the more general area of program analysis techniques that leverage the physical side
+effects of computation \cite{Zop, Zop2, Nader2016, Elvan2021}. \\
+\textit{Broader Impacts:}
+This work has opened up new possibilities in a number of additional areas,
 including program testing and debugging and software security. Inherently interdisciplinary, research has improved the state of the art in many areas including electromagnetic, signal processing, computer architecture, and software engineering.
 
-Grant CNS 1740962\textit{EAGER: Exploration of THz Backscattering
+\item Grant CNS 1740962 \textit{EAGER: Exploration of THz Backscattering
 as a Side-channel in Computer Systems}
-($\$107K$, September 2010--August 2012).
-\textit{Intellectual Merit:}Our seminal work on backscattered signals and how they can be used for HT detection has opened up new possibilities
-for non-destructive testing of electronics and for more precise detection of dormant HTs \cite{Pavel2020,nguyen19,Erik2022}.
-\textit{Broader Impact:}THz back-scattering side-channel is an entirely new side channel that significantly differs
+($\$200K$, August 2017--July 2019). \\
+\textit{Intellectual Merit:}
+Our seminal work on backscattered signals and how they can be used for HT detection has opened up new possibilities
+for non-destructive testing of electronics and for more precise detection of dormant HTs \cite{Pavel2020,nguyen19,Erik2022}.\\
+\textit{Broader Impacts:}
+THz back-scattering side-channel is an entirely new side channel that significantly differs
 from existing ones for both defensive and offensive uses. We have built several testbeds and demos and demonstrated it to various communities
 to educate public about this new technology. We have received several best paper and patent awards.
+\end{itemize}
 
-{\bf Dr. Zajic} is currently also the PI on grant ECCS-1651273 NSF CAREER(from 2017-2023 $\$500K$) \textit{Modeling and Measurements for THz Wireless Chip-to-Chip Communications Propagation} \textit{Intellectual Merit:}To enable future THz wireless communication between chips in a system and between blades and racks in large-scale data center systems, this project is investigating  propagation mechanisms \cite{Cheng2020}, \cite{Kim2016}, \cite{Fu2019} and develops channel models \cite{Kim2016a}, \cite{Fu2020} to enable communication between chips on a motherboard inside a computer system, between the motherboard and an add-on card (e.g., a graphics card), between boards/blades in a rack-mounted system typical for base stations, and between racks in a data center environment (with raised floors, rows of racks, cooling ducts, etc.). \textit{Broader Impact:} In addition to the broader impact within the research community and training graduate students funded by this grant, the PI is leading mm-wave indoor channel modeling and measurements efforts in the 5G Millimeter Wave Channel Model Alliance, led by National institute of Standards and Technology, which aims to produce more accurate, consistent and predictive channel models for frequencies above 6 GHz and lead the standardization process \cite{Book}.
+{\bf Dr. Zajic} is currently also the PI on the following NSF-funded project:
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+\item Grant ECCS-1651273 NSF CAREER \textit{Modeling and Measurements for THz Wireless Chip-to-Chip Communications Propagation} (2017-2023, $\$500K$) \\
+\textit{Intellectual Merit:}
+To enable future THz wireless communication between chips in a system and between blades and racks in large-scale data center systems, this project is investigating  propagation mechanisms \cite{Cheng2020,Kim2016,Fu2019} and develops channel models \cite{Kim2016a,Fu2020} to enable communication between chips on a motherboard inside a computer system, between the motherboard and an add-on card (e.g., a graphics card), between boards/blades in a rack-mounted system typical for base stations, and between racks in a data center environment (with raised floors, rows of racks, cooling ducts, etc.). \\
+\textit{Broader Impacts:}
+In addition to the broader impact within the research community and training graduate students funded by this grant, the PI is leading mm-wave indoor channel modeling and measurements efforts in the 5G Millimeter Wave Channel Model Alliance, led by National institute of Standards and Technology, which aims to produce more accurate, consistent and predictive channel models for frequencies above 6 GHz and lead the standardization process \cite{Book}.
+\end{itemize}
 
-Dr. Kumar has served as PI on the following NSF-funded project in
-the last five years: CCF-2006763 SHF (from 2020-2023 \$500K).
-
-CCF-2006763 SHF Printed Computer Systems (\$500K, October 2020- September 2023).
+{\bf Dr. Kumar} has served as PI on the following NSF-funded project in
+the last five years:
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+\item Grant CCF-2006763 SHF Printed Computer Systems (\$500K, October 2020- September 2023).\\
 \textit{Intellectual Merit:} The project has already resulted in first sub-cent microprocessor~cite{bleier22}, first plastic encryption engines~\cite{bleier23},
-first work on printed microprocessors~\cite{bleier2020printed}, and first work on printed classifiers~\cite{mubarik20}.
-\textit{Broader Impact:} This project has opened up new possibilities for ultra-low cost and conformal active electronics, enabling applications such as wearable patches~\cite{8502791},
+first work on printed microprocessors~\cite{bleier2020printed}, and first work on printed classifiers~\cite{mubarik20}.\\
+\textit{Broader Impacts:} This project has opened up new possibilities for ultra-low cost and conformal active electronics, enabling applications such as wearable patches~\cite{8502791},
 garments~\cite{garments}, packaging~\cite{gethin2013printed} for fast moving consumer goods (FMCG), low-end healthcare products such as smart
 bandages~\cite{DERAKHSHANDEH20181259}, and disposable sensors for food~\cite{7994325}, pharmaceuticals~\cite{BERGAMINI200554},
 agriculture and forestry~\cite{chemosensors8040125}, and environment~\cite{MARRAZZA1999297} --- that have not seen much penetration of computing.
+\end{itemize}
 
 \bibliographystyle{abbrv}
 \bibliography{refs}
