@@ -154,6 +154,7 @@ to minimize the effect of data-dependent contributors and create a \emph{baselin
 	\includegraphics[width=0.45\columnwidth,clip]{figure/amp2.pdf}
 \vspace{-0.3in}
 	\caption{Measured (green) and simulated (black) signal when each pipeline stage is treated a separate source (top), and when considering the entire processor as a single source (bottom). Red ellipses point out the largest differences between simulated and measured signals.}
+	\vspace{-0.1in}
 	\label{fig:amp}
 \end{wrapfigure}
 Figure~\ref{fig:amp} shows the measured and EMSim-generated EM signals when an {\tt ADD} instruction progresses through the pipeline while all the other instructions are {\tt NOP}s. The top part of Figure~\ref{fig:amp} corresponds to EMSim simulation where the contribution of each stage is scaled separately, using the per-stage scaling factors obtained from measured data. The bottom part of Figure~\ref{fig:amp} shows the simulated signal when all stages are treated as one source, i.e. only one (average) scaling factor is estimated from measurements and then used for activity in any stage. As we can see in Figure~\ref{fig:amp}, failing to model each stage individually (as used in previous work~\cite{McCann:2017:TPT:3241189.3241207}) can lead to significant inaccuracy.
