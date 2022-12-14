@@ -125,7 +125,7 @@ Analog side-channels (power, electromagnetic, acoustic, etc.) have long been a p
 and yet contain sensitive data, such as sensor data, login information for over-the-network management of the system and/or accessing back-end cloud infrastructure.
 For some side-channels, such as electromagnetic (EM) emanations, physical proximity can be leveraged to attack systems that are considered to be physically secure but are located {\em near} publicly accessible locations, e.g., in-wall ``smart building'' sensors, security cameras, etc~\cite{10.1007/978-3-662-48324-4_11,6766222,Camurati:2018:SCE:3243734.3243802,8574570}.
 Many such attacks have been demonstrated over the past several decades, followed by countermeasures that prevent specific attacks by modifying the software that has been demonstrated to leak sensitive information. However, recent analog side channel attacks demonstrated by PIs Prvulovic and Zajic have shown that both attacks and mitigation are becoming increasingly dependent on microarchitectural behavior, making mitigation potentially fragile to future microarchitectural changes~\cite{217605,Monjur21}.
-Unfortunately, early-design tools, such as cycle-accurate (microarchitecture-level) simulators~\cite{Li:2009:MIP:1669112.1669172,Li:2011:CAM:2132325.2132479,509850,Ardestani:2013:EFM:2495252.2495480,Binkert:2011:GS:2024716.2024718,sesc,5982026,carlson2014aeohmcm}, do not model analog side channel signals, so these side channels can only be considered when they can be physically measured (post-fabrivation). At that time, however, time-to-market concerns prevent introduction of overall design changes that would adjust the design tradeoffs in a more desirable direction. Additionally, most software developers have neither the know-how nor the equipment to assess their software’s potential vulnerability to analog side channels, so such considerations are typically either qualitative or entirely absent during software design, giving first-mover advantage to attackers, and resulting in mitigation via localized patches, which themselves are becoming increasingly microarchitecture-dependent.
+Unfortunately, early-design tools, such as cycle-accurate (microarchitecture-level) simulators~\cite{Li:2009:MIP:1669112.1669172,Li:2011:CAM:2132325.2132479,509850,Ardestani:2013:EFM:2495252.2495480,Binkert:2011:GS:2024716.2024718,sesc,5982026,carlson2014aeohmcm}, do not model analog side channel signals, so these side channels can only be considered when they can be physically measured (post-fabrication). At that time, however, time-to-market concerns prevent introduction of overall design changes that would adjust the design tradeoffs in a more desirable direction. Additionally, most software developers have neither the know-how nor the equipment to assess their software’s potential vulnerability to analog side channels, so such considerations are typically either qualitative or entirely absent during software design, giving first-mover advantage to attackers, and resulting in mitigation via localized patches, which themselves are becoming increasingly microarchitecture-dependent.
 
 Ideally,information leakage through analog side channels, and potential for ``breaking'' existing software mitigation approaches, would be considered in early stages of design for both hardware and software, guided by tools that can predict the impact a specific design has on analog side channels. This would be analogous to how performance and power consumption are predicted by cycle-accurate simulators, which allows the tradeoff between performance, power, and cost to be investigated at design time, years before the first prototypes are fabricated ~\cite{Li:2009:MIP:1669112.1669172,Li:2011:CAM:2132325.2132479,509850,Ardestani:2013:EFM:2495252.2495480,Binkert:2011:GS:2024716.2024718,sesc,5982026,carlson2014aeohmcm} If such efficient-yet-highly-accurate simulation would exist for analog side channels, computer architects could include analog side-channel leakage among their design considerations~\cite{8416860,Althoff:2018:HII:3276539.3276601,Andrysco:2018:TVC:3243734.3243766,cryptoeprint:2018:808,Rane:2016:SPF:3241094.3241101,nayak2017hop}, compilers could use simulation models to optimize for reduced leakage~\cite{Liu:2015:GHS:2694344.2694385,Rane:2015:RCD:2831143.2831171,Gorman:2017:AON:3123939.3123973}, software designers could detect and mitigate information leakage problems for security-sensitive applications~\cite{Wichelmann:2018:MFF:3274694.3274741,Chen:2017:PDS:3133956.3134058,Wu:2018:ETS:3213846.3213851}, etc.
 
@@ -176,7 +176,7 @@ Barenghi and Pelosi~\cite{Barenghi:2018:SSS:3195970.3196112} proposed a method t
 Another approach to quantifying side-channel leakage is to use information theory and estimate capacity of analog side channels. Millen was the first to establish a connection between Shannon's information theory and information flow models in computer systems~\cite{Millen87}, and to calculate the capacity (maximum possible data rate) of such a side-channel.
 However, that model assumes a synchronous channel (where information is transmitted at a constant rate that is known to the receiver); this is not a realistic assumption for analog side-channels in computer systems, where the timing of execution in the spy program varies
 due to a number of hardware features (e.g., pipeline stalls, dynamic scheduling of instructions, cache hits and misses, branch prediction, etc.).
-Additionally, analog side-channels often include insertion, deletion, and errors, e.g., interrupts and other system activity often inserts activity into the timeline of the spy program's execution. 
+Additionally, analog side-channels often include insertion, deletion, and errors, e.g., interrupts and other system activity often inserts activity into the timeline of the spy program's execution.
 While~\cite{baki18icassp,baki18milcom,baki17} derive bounds for information leakage from side-channels with insertions, deletions, and errors, but fall short of considering how executed instructions affect each other through their interaction with the microarchitecture,
 and that can significantly impact the signal. Side-channel information capacity created by execution of a sequence of instructions was also derived by PIs Zajic and Prvulovic and their students~\cite{Baki_2020a}, using a Markov Source model to account for dependencies among instructions, treating a processor as a transmitter with multiple ``antennas'', where each antenna corresponds to a pipeline stage. While these capacity-based approaches can
 represent the worst-case severity of side channel leakage, none of them provides enough detail to identify specific vulnerabilities and/or attribute leakage to specific hardware blocks or program code.
@@ -214,7 +214,7 @@ while PI Kumar has advised several undergraduate researchers who have gone on to
 studies at UIUC and elsewhere, and has advised undergraduate students who have recently published
 in premiere computer architecture conferences, including ISCA, HPCA (best paper nomination),
 and DAC. The interdisciplinary nature of the project will help us engage a large number of undergraduate
-students in research, and will provide both graduate and undergraduate student with a unique interdiciplinary skill-set.
+students in research, and will provide both graduate and undergraduate student with a unique interdisciplinary skill-set.
 
 \item Another outreach activity will be the development of displays
   and tools for educating the general public, especially high-school
@@ -229,7 +229,7 @@ students in research, and will provide both graduate and undergraduate student w
 Similarly, Dr. Kumar has assisted in the organization of events such as
 HackIllinois and Engineering Open House (EOH) that see enthusiastic
 participation from the local community.
-He will have a booth on “processors that leak information” in the next three EOHs to get high school students excited about intersection of computer architecture and security.
+He will have a booth on ``processors that leak information'' in the next three EOHs to get high school students excited about intersection of computer architecture and security.
 \end{itemize}
 
 
@@ -242,7 +242,7 @@ The research, education, and outreach milestones for each year are outlined in t
 \hline
 \textbf{Year} & \textbf{Research} & \textbf{Education and Outreach}\\
 \hline
-\textit{1} & Develop methods that allow microarchitecture-level simulation to produce highly accurate analog side channel signals; 
+\textit{1} & Develop methods that allow microarchitecture-level simulation to produce highly accurate analog side channel signals;
 Develop methods for efficiently performing circuit-level simulation of caches, functional units, and other building blocks of the processor, to provide per-event timelines for voltage and current; Develop methods that produce per-event signal snippets for various side channels by transforming the outputs of circuit-level simulation.
 & Develop initial modules for graduate courses, visits to local schools, undergraduate teams work on lab measurement setups\\
 \hline
@@ -305,7 +305,7 @@ the last five years:
 first work on printed microprocessors~\cite{bleier2020printed}, and first work on printed classifiers~\cite{mubarik20}.\\
 \textit{Broader Impacts:} This project has opened up new possibilities for ultra-low cost and conformal active electronics, enabling applications such as wearable patches~\cite{8502791},
 garments~\cite{garments}, packaging~\cite{gethin2013printed} for fast moving consumer goods (FMCG), low-end healthcare products such as smart
-bandages~\cite{DERAKHSHANDEH20181259}, and disposable sensors for food~\cite{7994325}, pharmaceuticals~\cite{BERGAMINI200554},
+bandages~\cite{DERAKHSHANDEH20181259}, and disposable sensors for food~\cite{7994325}, pharmaceutical~\cite{BERGAMINI200554},
 agriculture and forestry~\cite{chemosensors8040125}, and environment~\cite{MARRAZZA1999297} --- that have not seen much penetration of computing.
 \end{itemize}
 
